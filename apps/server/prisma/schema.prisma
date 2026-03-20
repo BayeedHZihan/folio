@@ -1,0 +1,57 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+model User {
+  id           String        @id @default(cuid())
+  email        String        @unique
+  name         String
+  passwordHash String
+  createdAt    DateTime      @default(now())
+  updatedAt    DateTime      @updatedAt
+  transactions Transaction[]
+}
+
+model Stock {
+  ticker       String        @id
+  name         String
+  currentPrice Float
+  currency     String        @default("USD")
+  sector       String
+  region       String
+  lastUpdated  DateTime      @default(now())
+  transactions Transaction[]
+}
+
+model Transaction {
+  id            String   @id @default(cuid())
+  userId        String
+  ticker        String
+  type          String
+  shares        Float
+  pricePerShare Float
+  currency      String
+  date          DateTime
+  notes         String?
+  createdAt     DateTime @default(now())
+
+  user  User  @relation(fields: [userId], references: [id], onDelete: Cascade)
+  stock Stock @relation(fields: [ticker], references: [ticker])
+
+  @@index([userId])
+  @@index([ticker])
+}
+
+model ForexRate {
+  id           String   @id @default(cuid())
+  fromCurrency String
+  toCurrency   String
+  rate         Float
+  updatedAt    DateTime @updatedAt
+
+  @@unique([fromCurrency, toCurrency])
+}
