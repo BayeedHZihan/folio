@@ -91,8 +91,7 @@ pnpm dev
 
 ## Roadmap
 
-- [ ] Holdings table on dashboard
-- [ ] Ticker autocomplete on transaction form
-- [ ] What-if investment simulator
-- [ ] Historical performance chart
+- [ ] Chatbot for portfolio insights
 - [ ] Mobile responsive polish
+- [ ] Ticker autocomplete on transaction form
+- [ ] Historical performance chart
