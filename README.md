@@ -91,7 +91,6 @@ pnpm dev
 
 ## Roadmap
 
-- [ ] Chatbot for portfolio insights
 - [ ] Mobile responsive polish
 - [ ] Ticker autocomplete on transaction form
 - [ ] Historical performance chart
