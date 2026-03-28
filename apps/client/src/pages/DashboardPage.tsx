@@ -1,5 +1,6 @@
 import { usePortfolioSummary, usePortfolioAnalytics } from '../hooks/usePortfolio'
 import AllocationChart from '../components/charts/AllocationChart'
+import PortfolioChat from '../components/chat/PortfolioChat'
 
 export default function DashboardPage() {
   const summary = usePortfolioSummary()
@@ -77,6 +78,12 @@ export default function DashboardPage() {
           <AllocationChart title="Regions" data={regionAllocation} />
         </div>
       )}
+
+      {/* AI Chat */}
+      <div className="mt-8">
+        <h2 className="text-lg font-semibold text-white mb-4">Portfolio Assistant</h2>
+        <PortfolioChat />
+      </div>
     </div>
   )
 }

@@ -7,6 +7,7 @@ import { transactionsRouter } from './routes/transactions';
 import { portfolioRouter } from './routes/portfolio';
 import { errorHandler } from './middleware/errorHandler';
 import { startPricePollingJob } from './jobs/pricePoller';
+import { aiRouter } from './routes/ai';
 
 const app = express();
 const PORT = process.env.PORT ?? 3001;
@@ -26,6 +27,7 @@ app.use('/api/auth', authRouter);
 app.use('/api/stocks', stocksRouter);
 app.use('/api/transactions', transactionsRouter);
 app.use('/api/portfolio', portfolioRouter);
+app.use('/api/ai', aiRouter);
 
 // ─── Health check ─────────────────────────────────────────────────────────────
 app.get('/api/health', (_req, res) => {
