@@ -2,7 +2,7 @@
 
 A full-stack portfolio analytics web app that replicates paid features from brokers like Scalable Capital. Built as a portfolio project to demonstrate modern React and Node.js development practices.
 
-![Folio Dashboard](https://placehold.co/1200x630/111827/22c55e?text=Folio+Dashboard)
+![Folio Dashboard](./apps/client/public/docs/dashboard.png)
 
 ## What it does
 
